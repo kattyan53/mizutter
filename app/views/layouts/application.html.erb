@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mizutter</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <header>
+    <ul class="top_menu clearfix">
+        <li><%= link_to "つぶやき一覧", mizutters_path %></li>
+        <li><%= link_to "つぶやく", new_mizutter_path %></li>
+    </ul>
+  </header>
+    <%= yield %>
+  </body>
+  
+  <footer class="footer">
+    <p>Copyright © 2017 MIZUTTER All RIGHTS RESERVED.</p>
+  </footer>
+  
+</html>

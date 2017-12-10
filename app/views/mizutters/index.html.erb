@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<body>
+<h1 id="heading04" align="center">All tweets</h1>
+<h3 id="notice"><%= notice %></h3>
+ 
+	<section id="cd-timeline" class="cd-container">
+	 <% @mizutters.each do |mizutter| %>
+		<div class="cd-timeline-block">
+			<div class="cd-timeline-img cd-picture">
+			</div> <!-- cd-timeline-img -->
+			<div class="cd-timeline-content">
+				<h2><%= mizutter.id %>個目のつぶやき</h2>
+				<p>
+				<%= mizutter.content %>
+				</p>
+				<h3 class="cd-read-more"><%= link_to "編集", edit_mizutter_path(mizutter.id), data: { confirm: '本当に編集していいですか？' } %></h3>
+        <h3 class="cd-read-more"><%= link_to '削除', mizutter_path(mizutter.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %></h3>
+				<span class="cd-date"></span>
+			</div> <!-- cd-timeline-content -->
+		</div> <!-- cd-timeline-block -->
+		　<% end %>
+	</section> <!-- cd-timeline -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="js/main.js"></script> <!-- Resource jQuery -->
+</body>
+</html>

@@ -1,0 +1,17 @@
+<%= form_with(model: @mizutter, local: true, url: choose_new_or_edit) do |form| %>
+  <% if @mizutter.errors.any? %>
+    <div id="error_explanation" color="red">
+      <h2><%= @mizutter.errors.count %>件のエラーがあります。</h2>
+      <ul>
+      <% @mizutter.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="blog_title">
+    <%= form.text_area :content, :size=>"50x10" %>
+  </div>
+  <h3 id="tweetbuton"><%= form.submit "つぶやく" %></h3>
+<% end %>

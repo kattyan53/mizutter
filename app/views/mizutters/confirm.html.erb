@@ -1,0 +1,14 @@
+<h3>以下の内容でつぶやきますか？</h3>
+
+<%= form_with(model: @mizutter, url: mizutters_path, local: true) do |form| %>
+  <%= form.hidden_field :content %>
+<div class="boxContainer">
+  <p id="confirm">本文:<%= @mizutter.content %></p>
+  <div class="box"><%= form.submit  "つぶやく" %></div>
+<% end %>
+
+<%= form_with(model: @mizutter, url: new_mizutter_path, local: true, method: 'get') do |form| %>
+  <%= form.hidden_field :content %>
+  <div class="box"><%= form.submit "もどる", name: 'back' %></div>
+<% end %>
+</div>
